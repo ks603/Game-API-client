@@ -1,3 +1,4 @@
+
 curl "https://video-game-sei.herokuapp.com/sign-in" \
   --include \
   --request POST \
@@ -6,6 +7,7 @@ curl "https://video-game-sei.herokuapp.com/sign-in" \
     "credentials": {
       "email": "'"${EMAIL}"'",
       "password": "'"${PASSWORD}"'",
+      "password_confirmation": "'"${PASSWORD}"'"
     }
   }'
 

@@ -2,10 +2,11 @@
 
 const store = require('./../store')
 
-const onSignUpSuccess = function () {
-  $('#message').text('succesfully signed up')
+const onSignUpSuccess = function (response) {
+  $('#message').text(response.user.email + ' succesfully signed up')
   $('#sign-up').trigger('reset')
   $('#message').removeClass()
+  $('#message').addClass('success-message')
 }
 
 const onSignUpFailure = function (response) {
@@ -14,12 +15,15 @@ const onSignUpFailure = function (response) {
 }
 
 const onSignInSuccess = function (response) {
-  $('#message').text('successfully signed in')
+  $('#message').text(response.user.email + ' successfully signed in')
   $('#sign-in').trigger('reset')
+  store.user = response.user
   $('#change-password').show()
   $('#sign-out').show()
   $('#sign-in').hide()
   $('#sign-up').hide()
+  $('#newGame').show()
+  $('#countGames').show()
 }
 
 const onSignInFailure = function (response) {
