@@ -6,7 +6,7 @@ const store = require('../store')
 const createGame = function (data) {
   return $.ajax({
     method: 'POST',
-    url: config.apiUrl + '/games/',
+    url: config.apiUrl + '/games',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },

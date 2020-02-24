@@ -21,6 +21,7 @@ const onUpdateGameFailure = function (responseData) {
 }
 
 const onGetGameSuccess = function (data) {
+  $('#message').text('get game success')
 }
 
 const onGetGameFailure = response => {
