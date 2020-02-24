@@ -8,7 +8,7 @@ const onCreateGame = function (event) {
   event.preventDefault()
   const data = getFormFields(form)
   console.log(data)
-  api.createGame()
+  api.createGame(data)
     .then(ui.onCreateGameSuccess)
     .catch(ui.onCreateGameFailure)
 }
