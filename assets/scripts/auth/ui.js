@@ -61,6 +61,8 @@ const onSignOutSuccess = function (response) {
   $('.content').hide()
   $('#clearGames').hide()
   $('form').trigger('reset')
+  location.reload()
+  return false
 }
 
 module.exports = {
