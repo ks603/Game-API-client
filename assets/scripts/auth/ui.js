@@ -7,6 +7,7 @@ const onSignUpSuccess = function (response) {
   $('#sign-up').trigger('reset')
   $('#message').removeClass()
   $('#message').addClass('success-message')
+  $('#clearGames').hide()
 }
 
 const onSignUpFailure = function (response) {
@@ -26,6 +27,7 @@ const onSignInSuccess = function (response) {
   $('#update-game').show()
   $('#delete-game').show()
   $('#getGames').show()
+  $('#clearGames').show()
 }
 
 const onSignInFailure = function (response) {
@@ -58,6 +60,8 @@ const onSignOutSuccess = function (response) {
   $('#delete-game').hide()
   $('#getGames').hide()
   $('.content').hide()
+  $('#clearGames').hide()
+  $('form').trigger('reset')
   store.user = null
 }
 

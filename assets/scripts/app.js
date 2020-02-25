@@ -11,6 +11,7 @@ $(() => {
   $('#get-game').hide()
   $('#getGames').hide()
   $('#delete-game').hide()
+  $('#clearGames').hide()
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)

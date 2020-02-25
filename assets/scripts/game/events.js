@@ -21,20 +21,6 @@ const onUpdateGame = function (event) {
     .catch(ui.onUpdateGameFailure)
 }
 
-// const onGetGame = function () {
-//   event.preventDefault()
-//   api.getGame()
-//     .then(ui.onGetGameSuccess)
-//     .catch(ui.onGetGameFailure)
-// }
-
-// const onDeleteGame = function (event) {
-//   event.preventDefault()
-//   const data = getFormFields(event.target)
-//   api.deleteGame(data)
-//     .then(ui.onDeleteGameSuccess)
-//     .catch(ui.onDeleteGameFailure)
-// }
 const onGetgames = function () {
   // event.preventDefault()
   api.getGames()
@@ -50,14 +36,14 @@ const onDeleteGames = function (event) {
     .catch(ui.failure)
 }
 
-const onCleargames = (event) => {
+const onClearGames = (event) => {
   event.preventDefault()
   ui.clearGames()
 }
 
 const addHandlers = () => {
   $('#getGames').on('click', onGetgames)
-  $('#clearGamesButton').on('click', onCleargames)
+  $('#clearGames').on('click', onClearGames)
   $('.content').on('click', '.remove-book', onDeleteGames)
 }
 
