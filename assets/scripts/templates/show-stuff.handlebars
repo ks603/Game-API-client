@@ -1,0 +1,18 @@
+{{#each games as |game|}}
+  {{log game}}
+  <section data-id="{{game.id}}">
+    <h6>Title:</h6>
+    <h3>
+      {{game.data}}
+    </h3>
+    <p>
+      {{#if game.given_name}}
+        {{game.given_name}}
+      {{else}}
+        No data provided.
+      {{/if}}
+    </p>
+    <button class="btn btn-danger remove-book" data-id="{{game.id}}">Remove</button>
+  </section>
+
+{{/each}}

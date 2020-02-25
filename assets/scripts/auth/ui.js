@@ -24,8 +24,8 @@ const onSignInSuccess = function (response) {
   $('#sign-up').hide()
   $('#create-game').show()
   $('#update-game').show()
-  $('#get-game').show()
   $('#delete-game').show()
+  $('#getGames').show()
 }
 
 const onSignInFailure = function (response) {
@@ -55,8 +55,9 @@ const onSignOutSuccess = function (response) {
   $('#sign-up').show()
   $('#create-game').hide()
   $('#update-game').hide()
-  $('#get-game').hide()
   $('#delete-game').hide()
+  $('#getGames').hide()
+  $('.content').hide()
   store.user = null
 }
 

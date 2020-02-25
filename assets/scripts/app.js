@@ -9,6 +9,7 @@ $(() => {
   $('#create-game').hide()
   $('#update-game').hide()
   $('#get-game').hide()
+  $('#getGames').hide()
   $('#delete-game').hide()
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
@@ -18,4 +19,5 @@ $(() => {
   $('#update-game').on('submit', gameEvents.onUpdateGame)
   $('#get-game').on('submit', gameEvents.onGetGame)
   $('#delete-game').on('submit', gameEvents.onDeleteGame)
+  gameEvents.addHandlers()
 })

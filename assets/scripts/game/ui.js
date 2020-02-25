@@ -1,4 +1,5 @@
 const store = require('./../store')
+const showGamesTemplate = require('../templates/show-stuff.handlebars')
 
 const onCreateGameSuccess = function (data) {
   store.game = data.game
@@ -27,6 +28,7 @@ const onUpdateGameFailure = function (responseData) {
 const onGetGameSuccess = function (data) {
   $('#message').text('get game success')
   $('form').trigger('reset')
+  $('.content').show()
 }
 
 const onGetGameFailure = response => {
@@ -44,6 +46,21 @@ const onDeleteGameFailure = function (data) {
   $('form').trigger('reset')
 }
 
+const getGamesSuccess = (data) => {
+  console.log(data)
+  const showGamesHtml = showGamesTemplate({ games: data.games })
+  $('.content').append(showGamesHtml)
+  $('#message').text('Here is the list!')
+}
+
+const clearGames = () => {
+  $('.content').empty()
+}
+
+const failure = (error) => {
+  console.error(error)
+}
+
 module.exports = {
   onCreateGameSuccess,
   onCreateGameFailure,
@@ -52,5 +69,8 @@ module.exports = {
   onGetGameSuccess,
   onGetGameFailure,
   onDeleteGameSuccess,
-  onDeleteGameFailure
+  onDeleteGameFailure,
+  getGamesSuccess,
+  clearGames,
+  failure
 }

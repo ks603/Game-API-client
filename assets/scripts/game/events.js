@@ -21,24 +21,51 @@ const onUpdateGame = function (event) {
     .catch(ui.onUpdateGameFailure)
 }
 
-const onGetGame = function () {
-  event.preventDefault()
-  api.getGame()
-    .then(ui.onGetGameSuccess)
-    .catch(ui.onGetGameFailure)
+// const onGetGame = function () {
+//   event.preventDefault()
+//   api.getGame()
+//     .then(ui.onGetGameSuccess)
+//     .catch(ui.onGetGameFailure)
+// }
+
+// const onDeleteGame = function (event) {
+//   event.preventDefault()
+//   const data = getFormFields(event.target)
+//   api.deleteGame(data)
+//     .then(ui.onDeleteGameSuccess)
+//     .catch(ui.onDeleteGameFailure)
+// }
+const onGetgames = function () {
+  // event.preventDefault()
+  api.getGames()
+    .then(ui.getGamesSuccess)
+    .catch(ui.failure)
+}
+const onDeleteGames = function (event) {
+  const id = $(event.target).data('id')
+  api.deleteGames(id)
+    .then(function () {
+      onGetgames(event)
+    })
+    .catch(ui.failure)
 }
 
-const onDeleteGame = function (event) {
+const onCleargames = (event) => {
   event.preventDefault()
-  const data = getFormFields(event.target)
-  api.deleteGame(data)
-    .then(ui.onDeleteGameSuccess)
-    .catch(ui.onDeleteGameFailure)
+  ui.clearGames()
+}
+
+const addHandlers = () => {
+  $('#getGames').on('click', onGetgames)
+  $('#clearGamesButton').on('click', onCleargames)
+  $('.content').on('click', '.remove-book', onDeleteGames)
 }
 
 module.exports = {
-  onGetGame,
+  // onGetGame,
   onCreateGame,
   onUpdateGame,
-  onDeleteGame
+  // onDeleteGame,
+  addHandlers,
+  onDeleteGames
 }
