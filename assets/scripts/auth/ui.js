@@ -57,12 +57,10 @@ const onSignOutSuccess = function (response) {
   $('#sign-up').show()
   $('#create-game').hide()
   $('#update-game').hide()
-  $('#delete-game').hide()
   $('#getGames').hide()
   $('.content').hide()
   $('#clearGames').hide()
   $('form').trigger('reset')
-  store.user = null
 }
 
 module.exports = {
