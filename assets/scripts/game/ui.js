@@ -28,11 +28,21 @@ const onGetGameFailure = response => {
   $('#message').text('Get Games failed!')
 }
 
+const onDeleteGameSuccess = function (data) {
+  $('#message').text('You deleted the game!')
+}
+
+const onDeleteGameFailure = function (data) {
+  $('#message').text('Delete game failed')
+}
+
 module.exports = {
   onCreateGameSuccess,
   onCreateGameFailure,
   onUpdateGameSuccess,
   onUpdateGameFailure,
   onGetGameSuccess,
-  onGetGameFailure
+  onGetGameFailure,
+  onDeleteGameSuccess,
+  onDeleteGameFailure
 }
