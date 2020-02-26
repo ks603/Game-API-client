@@ -14,13 +14,11 @@ const onCreateGameFailure = function (data) {
 }
 
 const onUpdateGameSuccess = function (responseData) {
-  store.hardware = responseData.hardware
   $('#message').text('Updated game successfully!')
   $('form').trigger('reset')
 }
 
 const onUpdateGameFailure = function (responseData) {
-  store.hardware = responseData.hardware
   $('#message').text('Updated game failed!')
   $('form').trigger('reset')
 }

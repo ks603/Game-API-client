@@ -25,6 +25,13 @@
       No data provided.
     {{/if}}
     </p>
+    <p> Game ID:
+      {{#if game.id}}
+        {{game.id}}
+        {{else}}
+      No data provided.
+    {{/if}}
+    </p>
     <button class="btn btn-danger remove-book" data-id="{{game.id}}">Remove</button>
   </section>
 
