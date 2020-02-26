@@ -34,6 +34,12 @@ sign in and create a review for a video game. Once signed in they can also view 
 # **API Repository**
 - Link to the API repo: [API Repository](https://github.com/ks603/Video-Game-API)
 
+- Link to the client repo: [Client Repository](https://github.com/ks603/Game-API-client)
+
+- Link to the deployed back-end: [Deployed Back-End](https://video-game-sei.herokuapp.com/)
+
+- Link to the deployed site: [Video Games](https://ks603.github.io/Game-API-client/)
+
 # **Wireframe**
 **Wireframe to Front-End**
 ![Wireframe](https://i.imgur.com/HRhFzFu.png)
