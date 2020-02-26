@@ -1,1 +1,55 @@
 @import '~bootstrap/scss/bootstrap';
+
+body {
+  text-align: center;
+  background: url('https://i.imgur.com/gr9maJ0.jpg') no-repeat center center fixed;
+  background-size: cover;
+  padding: 50px
+}
+
+p {
+  text-align: center;
+  font-size: 25px;
+  color: red;
+  font-family: 'Oxanium', ;
+}
+
+h1 {
+  font-family: 'Oxanium', ;
+}
+
+legend {
+  font-family: 'Oxanium', ;
+}
+
+label {
+  font-family: 'Oxanium', ;
+}
+
+#sign-in {
+  font-family: 'Oxanium', ;
+}
+
+#sign-up {
+  font-family: 'Oxanium', ;
+}
+
+#change-password {
+    font-family: 'Oxanium', ;
+}
+
+#sign-out {
+    font-family: 'Oxanium', ;
+}
+
+#create-game {
+    font-family: 'Oxanium', ;
+}
+
+#update-game {
+    font-family: 'Oxanium', ;
+}
+
+#gameMessage {
+    font-family: 'Oxanium', ;
+}

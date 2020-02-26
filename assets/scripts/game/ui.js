@@ -23,18 +23,18 @@ const onUpdateGameFailure = function (responseData) {
   $('form').trigger('reset')
 }
 
-const onGetGameSuccess = function (data) {
-  $('#message').text('get game success')
+const onGetgames = function (data) {
+  $('#message').text('Game deleted')
   $('form').trigger('reset')
   $('.content').show()
 }
 
-const onGetGameFailure = response => {
+const onGetGamesFailure = response => {
   $('#message').text('Get Games failed!')
   $('form').trigger('reset')
 }
 
-const onDeleteGameSuccess = function (data) {
+const onDeleteGamesSuccess = function (data) {
   $('#message').text('You deleted the game!')
   $('form').trigger('reset')
 }
@@ -45,18 +45,24 @@ const onDeleteGameFailure = function (data) {
 }
 
 const getGamesSuccess = (data) => {
-  console.log(data)
   const showGamesHtml = showGamesTemplate({ games: data.games })
   $('.content').append(showGamesHtml)
   $('#message').text('Here is the list!')
 }
 
-const clearGames = () => {
-  $('.content').empty()
+const onTestSuccess = (data) => {
+  const showGamesHtml = showGamesTemplate({ games: data.games })
+  $('.content').append(showGamesHtml)
+  $('#message').text('delete success')
 }
 
-const failure = (error) => {
-  console.error(error)
+const clearGames = () => {
+  $('.content').empty()
+  $('#message').text('Games cleared')
+}
+
+const failure = () => {
+  $('#message').text('Not authorized for delete')
 }
 
 module.exports = {
@@ -64,11 +70,12 @@ module.exports = {
   onCreateGameFailure,
   onUpdateGameSuccess,
   onUpdateGameFailure,
-  onGetGameSuccess,
-  onGetGameFailure,
-  onDeleteGameSuccess,
+  onGetgames,
+  onGetGamesFailure,
+  onDeleteGamesSuccess,
   onDeleteGameFailure,
   getGamesSuccess,
   clearGames,
-  failure
+  failure,
+  onTestSuccess
 }

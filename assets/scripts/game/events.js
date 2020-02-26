@@ -22,16 +22,21 @@ const onUpdateGame = function (event) {
 }
 
 const onGetgames = function () {
-  // event.preventDefault()
   api.getGames()
     .then(ui.getGamesSuccess)
     .catch(ui.failure)
 }
+const onTest = function () {
+  api.getGames()
+    .then(ui.onTestSuccess)
+    .catch(ui.onTestFailed)
+}
+
 const onDeleteGames = function (event) {
   const id = $(event.target).data('id')
   api.deleteGames(id)
     .then(function () {
-      onGetgames(event)
+      onTest(event)
     })
     .catch(ui.failure)
 }
@@ -48,10 +53,9 @@ const addHandlers = () => {
 }
 
 module.exports = {
-  // onGetGame,
   onCreateGame,
   onUpdateGame,
-  // onDeleteGame,
   addHandlers,
-  onDeleteGames
+  onDeleteGames,
+  onTest
 }
