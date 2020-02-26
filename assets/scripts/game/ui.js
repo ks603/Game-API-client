@@ -2,6 +2,9 @@ const store = require('./../store')
 const showGamesTemplate = require('../templates/show-stuff.handlebars')
 
 const onCreateGameSuccess = function (data) {
+  $('.content').html('')
+  const showGamesHtml = showGamesTemplate({ games: data.games })
+  $('.content').append(showGamesHtml)
   store.game = data.game
   $('#message').text('Created game successfully!')
   $('form').trigger('reset')
@@ -13,7 +16,10 @@ const onCreateGameFailure = function (data) {
   $('form').trigger('reset')
 }
 
-const onUpdateGameSuccess = function (responseData) {
+const onUpdateGameSuccess = function (data) {
+  $('.content').html('')
+  const showGamesHtml = showGamesTemplate({ games: data.games })
+  $('.content').append(showGamesHtml)
   $('#message').text('Updated game successfully!')
   $('form').trigger('reset')
 }
@@ -45,14 +51,13 @@ const onDeleteGameFailure = function (data) {
 }
 
 const getGamesSuccess = (data) => {
+  $('.content').html('')
   const showGamesHtml = showGamesTemplate({ games: data.games })
   $('.content').append(showGamesHtml)
-  $('#message').text('Here is the list!')
+  $('#message').text('current list')
 }
 
 const onTestSuccess = (data) => {
-  const showGamesHtml = showGamesTemplate({ games: data.games })
-  $('.content').append(showGamesHtml)
   $('#message').text('delete success')
 }
 

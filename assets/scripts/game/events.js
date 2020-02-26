@@ -9,7 +9,10 @@ const onCreateGame = function (event) {
   const data = getFormFields(form)
   console.log(data)
   api.createGame(data)
-    .then(ui.onCreateGameSuccess)
+    .then(function () {
+      onGetgames(event)
+        .then(ui.onCreateGameSuccess)
+    })
     .catch(ui.onCreateGameFailure)
 }
 
@@ -18,6 +21,9 @@ const onUpdateGame = function (event) {
   const data = getFormFields(event.target)
   api.updateGame(data)
     .then(ui.onUpdateGameSuccess)
+    .then(function () {
+      onGetgames(event)
+    })
     .catch(ui.onUpdateGameFailure)
 }
 
@@ -37,6 +43,9 @@ const onDeleteGames = function (event) {
   api.deleteGames(id)
     .then(function () {
       onTest(event)
+    })
+    .then(function () {
+      onGetgames(event)
     })
     .catch(ui.failure)
 }
