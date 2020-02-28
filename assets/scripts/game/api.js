@@ -25,7 +25,8 @@ const updateGame = function (data) {
   })
 }
 
-const deleteGames = function (id) {
+const deleteGames = function (event) {
+  const id = $(event.target).data('id')
   return $.ajax({
     url: config.apiUrl + '/games/' + id,
     headers: {

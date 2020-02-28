@@ -7,7 +7,6 @@ const onCreateGame = function (event) {
   const form = event.target
   event.preventDefault()
   const data = getFormFields(form)
-  console.log(data)
   api.createGame(data)
     .then(function () {
       onGetgames(event)
@@ -39,8 +38,8 @@ const onTest = function () {
 }
 
 const onDeleteGames = function (event) {
-  const id = $(event.target).data('id')
-  api.deleteGames(id)
+  // const id = $(event.target).data('id')
+  api.deleteGames(event)
     .then(function () {
       onTest(event)
     })

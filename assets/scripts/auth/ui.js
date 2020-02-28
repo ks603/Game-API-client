@@ -25,7 +25,6 @@ const onSignInSuccess = function (response) {
   $('#sign-up').hide()
   $('#create-game').show()
   $('#update-game').show()
-  $('#delete-game').show()
   $('#getGames').show()
   $('#clearGames').show()
 }

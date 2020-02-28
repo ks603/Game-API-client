@@ -42,7 +42,7 @@ const onGetGamesFailure = response => {
 
 const onDeleteGamesSuccess = function (data) {
   $('#message').text('You deleted the game!')
-  $('form').trigger('reset')
+  $('#remove-book').trigger('reset')
 }
 
 const onDeleteGameFailure = function (data) {
