@@ -31,7 +31,7 @@ sign in and create a review for a video game. Once signed in they can also view 
 # **Unsolved Issues/Future**
 - In the future I want to be able to search for games that way I can see if other users have made a review and if the game is recomended or not.
 
-# **API Repository**
+# **Links**
 - Link to the API repo: [API Repository](https://github.com/ks603/Video-Game-API)
 
 - Link to the client repo: [Client Repository](https://github.com/ks603/Game-API-client)
